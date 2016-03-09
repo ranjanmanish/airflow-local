@@ -3,7 +3,7 @@
 * Source code - [Github][10]
 * Author - Gavin Noronha - <gavinln@hotmail.com>
 
-[1]: https://github.com/gavinln/airflow-local.git
+[10]: https://github.com/gavinln/airflow-local.git
 
 ## About
 
