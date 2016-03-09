@@ -18,7 +18,7 @@ There are [Puppet][60] scripts that automatically install the software when the 
 
 [60]: http://puppetlabs.com/
 
-## Running
+## Connect to the VM
 
 1. To start the virtual machine(VM) type
 
@@ -32,10 +32,52 @@ There are [Puppet][60] scripts that automatically install the software when the 
     vagrant ssh airflow-local
     ```
 
-4. Open the notebook in the browser at the URL.
+## Initialize Airflow
+
+1. Setup the home directory
 
     ```
-    http://192.168.33.10:8080/
+    export AIRFLOW_HOME=~/airflow
+    ```
+
+2. Initialize the sqlite database
+
+    ```
+    airflow initdb
+    ```
+
+3. Start the web server
+
+    ```
+    airflow webserver -p 8080
+    ```
+
+4. Open a web browser to the UI at http://192.168.33.10:8080
+
+## Run a task
+
+1. List DAGS
+
+    ```
+    airflow list_dags
+    ```
+
+2. List tasks for `example_bash_operator` DAG
+
+    ```
+    airflow list_tasks example_bash_operator
+    ```
+
+3. List tasks for `example_bash_operator` in a tree view
+
+    ```
+    airflow list_tasks example_bash_operator -t
+    ```
+
+4. Run the `runme_0` task on the `example_bash_operator` DAG today
+
+    ```
+    airflow run example_bash_operator runme_0 `date +%Y-%m-%d`
     ```
 
 ## Documentation
