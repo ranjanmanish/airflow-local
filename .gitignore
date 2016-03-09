@@ -1,0 +1,7 @@
+*~
+*.pyc
+*.class
+*.swp
+*.o
+*.hi
+.vagrant
