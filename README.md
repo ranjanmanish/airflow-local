@@ -86,7 +86,7 @@ There are [Puppet][60] scripts that automatically install the software when the 
 
     * https://pythonhosted.org/airflow/
 
-2. Video on Airflow
+2. Videos on Airflow
 
     * https://www.youtube.com/watch?v=dgaoqOZlvEA&feature=youtu.be
 
@@ -95,9 +95,10 @@ There are [Puppet][60] scripts that automatically install the software when the 
     * http://www.slideshare.net/walterliu7/airflow-a-data-flow-engine
     * http://www.slideshare.net/Hadoop_Summit/airflow-an-open-source-platform-to-author-and-monitor-data-pipelines
 
-4. Airflow review
+4. Airflow reviews
 
     * http://bytepawn.com/airflow.html
+    * https://www.pandastrike.com/posts/20150914-airflow
 
 ## Requirements
 
