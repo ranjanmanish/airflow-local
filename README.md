@@ -84,17 +84,20 @@ There are [Puppet][60] scripts that automatically install the software when the 
 
 1. Main documentation
 
-https://pythonhosted.org/airflow/
+    * https://pythonhosted.org/airflow/
 
 2. Video on Airflow
 
-https://www.youtube.com/watch?v=dgaoqOZlvEA&feature=youtu.be
+    * https://www.youtube.com/watch?v=dgaoqOZlvEA&feature=youtu.be
 
 2. Slides
 
-http://www.slideshare.net/walterliu7/airflow-a-data-flow-engine
-http://www.slideshare.net/Hadoop_Summit/airflow-an-open-source-platform-to-author-and-monitor-data-pipelines
+    * http://www.slideshare.net/walterliu7/airflow-a-data-flow-engine
+    * http://www.slideshare.net/Hadoop_Summit/airflow-an-open-source-platform-to-author-and-monitor-data-pipelines
 
+4. Airflow review
+
+    * http://bytepawn.com/airflow.html
 
 ## Requirements
 
