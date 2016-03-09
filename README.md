@@ -38,6 +38,22 @@ There are [Puppet][60] scripts that automatically install the software when the 
     http://192.168.33.10:8080/
     ```
 
+## Documentation
+
+1. Main documentation
+
+https://pythonhosted.org/airflow/
+
+2. Video on Airflow
+
+https://www.youtube.com/watch?v=dgaoqOZlvEA&feature=youtu.be
+
+2. Slides
+
+http://www.slideshare.net/walterliu7/airflow-a-data-flow-engine
+http://www.slideshare.net/Hadoop_Summit/airflow-an-open-source-platform-to-author-and-monitor-data-pipelines
+
+
 ## Requirements
 
 The following software is needed to get the software from github and run
