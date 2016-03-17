@@ -116,6 +116,23 @@ There are [Puppet][60] scripts that automatically install the software when the 
 
 3. Run airflow without any logging messages
 
+## Setup airflow dags directory
+
+1. Edit file ~/airflow/airflow.cfg
+
+2. Set the following:
+
+    ```
+    dags_folder = /vagrant/airflow/dags
+    load_examples = False
+    ```
+
+3. Start the scheduler by running the following
+
+    ```
+    airflow scheduler
+    ```
+
 ## Requirements
 
 The following software is needed to get the software from github and run
