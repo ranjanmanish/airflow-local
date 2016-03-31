@@ -80,6 +80,29 @@ There are [Puppet][60] scripts that automatically install the software when the 
     airflow run example_bash_operator runme_0 `date +%Y-%m-%d`
     ```
 
+## Add a new task
+
+1. Go to the Airflow config directory
+
+    ```
+    cd ~/airflow
+    ```
+
+2. Set the airflow dags directory in airflow.cfg by change the line:
+
+    ```
+    dags_folder = /vagrant/airflow/dags
+    ```
+
+3. Restart the web server
+
+    ```
+    airflow webserver -p 8080
+    ```
+
+
+
+
 ## Documentation
 
 1. Main documentation
@@ -94,6 +117,7 @@ There are [Puppet][60] scripts that automatically install the software when the 
 
     * http://www.slideshare.net/walterliu7/airflow-a-data-flow-engine
     * http://www.slideshare.net/Hadoop_Summit/airflow-an-open-source-platform-to-author-and-monitor-data-pipelines
+    * http://www.slideshare.net/walterliu7/airflow-a-data-flow-engine
 
 4. Airflow reviews
 
