@@ -80,6 +80,18 @@ There are [Puppet][60] scripts that automatically install the software when the 
     airflow run example_bash_operator runme_0 `date +%Y-%m-%d`
     ```
 
+5. Backfill a DAG
+
+    ```
+    airflow backfill -s 2016-03-30 example_bash_operator
+    ```
+
+6. Clear the history of DAG runs
+
+    ```
+    airflow clear example_bash_operator
+    ```
+
 ## Add a new task
 
 1. Go to the Airflow config directory
@@ -100,9 +112,6 @@ There are [Puppet][60] scripts that automatically install the software when the 
     airflow webserver -p 8080
     ```
 
-
-
-
 ## Documentation
 
 1. Main documentation
@@ -112,17 +121,21 @@ There are [Puppet][60] scripts that automatically install the software when the 
 2. Videos on Airflow
 
     * https://www.youtube.com/watch?v=dgaoqOZlvEA&feature=youtu.be
+    * https://www.youtube.com/watch?v=dgaoqOZlvEA
 
 2. Slides
 
     * http://www.slideshare.net/walterliu7/airflow-a-data-flow-engine
     * http://www.slideshare.net/Hadoop_Summit/airflow-an-open-source-platform-to-author-and-monitor-data-pipelines
-    * http://www.slideshare.net/walterliu7/airflow-a-data-flow-engine
 
 4. Airflow reviews
 
     * http://bytepawn.com/airflow.html
     * https://www.pandastrike.com/posts/20150914-airflow
+
+5. Airflow tips and tricks
+
+    * https://medium.com/handy-tech/airflow-tips-tricks-and-pitfalls-9ba53fba14eb#.i2hu0syug
 
 ## Disable logging
 
