@@ -20,7 +20,7 @@ Vagrant.configure(2) do |config|
   config.vm.box_check_update = false
 
   # use insecure key
-  config.ssh.insert_key = false
+  # config.ssh.insert_key = false
 
   # If true, then any SSH connections made will enable agent forwarding.
   # Default value: false
@@ -76,6 +76,23 @@ Vagrant.configure(2) do |config|
   #   sudo apt-get install -y apache2
   # SHELL
 
+  # config.vm.define "airflow-local", autostart: true do |machine|
+  #   machine.vm.provider "virtualbox" do |vb|
+  #     # vb.gui = true
+  #     vb.memory = "4096"
+  #     vb.cpus = "1"
+  #   end
+
+  #   machine.vm.hostname = "airflow-local"
+  #   machine.vm.network "private_network", ip: "192.168.33.10"
+  #   machine.vm.provision "puppet" do |puppet|
+  #     puppet.manifest_file  = "default.pp"
+  #     puppet.manifests_path = "puppet/manifests"
+  #     puppet.options = "--certname=%s" % machine.vm.hostname
+  #     #puppet.options = "--verbose --debug"
+  #   end
+  # end
+
   config.vm.define "airflow-local", autostart: true do |machine|
     machine.vm.provider "virtualbox" do |vb|
       # vb.gui = true
@@ -83,13 +100,19 @@ Vagrant.configure(2) do |config|
       vb.cpus = "1"
     end
 
+    if Vagrant::Util::Platform.windows? then
+        machine.vm.network "public_network"
+    else
+        # Linux machine with Docker has multiple network interfaces
+        machine.vm.network "public_network", bridge: "eth0"
+    end
+
     machine.vm.hostname = "airflow-local"
     machine.vm.network "private_network", ip: "192.168.33.10"
-    machine.vm.provision "puppet" do |puppet|
-      puppet.manifest_file  = "default.pp"
-      puppet.manifests_path = "puppet/manifests"
-      puppet.options = "--certname=%s" % machine.vm.hostname
-      #puppet.options = "--verbose --debug"
+
+    machine.vm.provision "shell" do |sh|
+      sh.path = "ansible/ansible_install.sh"
+      sh.args = "ansible/playbook.yml"
     end
   end
 end
