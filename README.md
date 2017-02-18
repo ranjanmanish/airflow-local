@@ -140,7 +140,6 @@ There are [Puppet][60] scripts that automatically install the software when the 
     * https://stlong0521.github.io/20161023%20-%20Airflow.html
     * https://databricks.com/blog/2016/12/08/integrating-apache-airflow-databricks-building-etl-pipelines-apache-spark.html
     * http://site.clairvoyantsoft.com/installing-and-configuring-apache-airflow/
-    * http://www.astronomer.io/blog/airflow-at-astronomer
     * https://gtoonstra.github.io/etl-with-airflow/principles.html
     * https://cwiki.apache.org/confluence/display/AIRFLOW/Common+Pitfalls
 
