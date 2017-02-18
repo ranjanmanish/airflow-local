@@ -23,13 +23,13 @@ There are [Puppet][60] scripts that automatically install the software when the 
 1. To start the virtual machine(VM) type
 
     ```
-    vagrant up airflow-local
+    vagrant up
     ```
 
 2. Connect to the VM
 
     ```
-    vagrant ssh airflow-local
+    vagrant ssh
     ```
 
 ## Initialize Airflow
@@ -83,7 +83,8 @@ There are [Puppet][60] scripts that automatically install the software when the 
 5. Backfill a DAG
 
     ```
-    airflow backfill -s 2016-03-30 example_bash_operator
+    export START_DATE=$(date -d "-2 days" "+%Y-%m-%d")
+    airflow backfill -s $START_DATE example_bash_operator
     ```
 
 6. Clear the history of DAG runs
@@ -141,6 +142,7 @@ There are [Puppet][60] scripts that automatically install the software when the 
     * http://site.clairvoyantsoft.com/installing-and-configuring-apache-airflow/
     * http://www.astronomer.io/blog/airflow-at-astronomer
     * https://gtoonstra.github.io/etl-with-airflow/principles.html
+    * https://cwiki.apache.org/confluence/display/AIRFLOW/Common+Pitfalls
 
 ## Disable logging
 

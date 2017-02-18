@@ -66,7 +66,6 @@ Vagrant.configure(2) do |config|
   # config.push.define "atlas" do |push|
   #   push.app = "YOUR_ATLAS_USERNAME/YOUR_APPLICATION_NAME"
   # end
-  config.vm.provision "shell", path: 'puppet/install_puppet_modules.sh'
 
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
@@ -96,15 +95,14 @@ Vagrant.configure(2) do |config|
   config.vm.define "airflow-local", autostart: true do |machine|
     machine.vm.provider "virtualbox" do |vb|
       # vb.gui = true
-      vb.memory = "4096"
+      vb.memory = "2048"
       vb.cpus = "1"
-    end
 
-    if Vagrant::Util::Platform.windows? then
-        machine.vm.network "public_network"
-    else
-        # Linux machine with Docker has multiple network interfaces
-        machine.vm.network "public_network", bridge: "eth0"
+      if Vagrant::Util::Platform.windows? then
+        # Fix for slow external network connections for Windows 10
+        vb.customize ['modifyvm', :id, '--natdnshostresolver1', 'on']
+        vb.customize ['modifyvm', :id, '--natdnsproxy1', 'on']
+      end
     end
 
     machine.vm.hostname = "airflow-local"

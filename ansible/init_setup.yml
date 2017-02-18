@@ -5,8 +5,8 @@
 - name: install python dev
   apt: name=python-dev state=installed
 
-- name: Install ffmpeg
-  apt: name=ffmpeg state=installed
+# - name: Install ffmpeg
+#   apt: name=ffmpeg state=installed
 
 - name: Install Pip
   apt: name=python-pip state=installed

@@ -17,3 +17,4 @@
     - include: init_setup.yml
     - include: cli_setup.yml
     - include: python_setup.yml
+    - include: airflow-setup.yml
