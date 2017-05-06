@@ -186,6 +186,11 @@ also provides an [SSH  client][200] for Windows.
 * [Vagrant][220]
 * [Git][230]
 
+## How to copy the local files from laptop to Vagrant
+
+* : By default, Vagrant will share your project directory (the directory with the Vagrantfile) to /vagrant
+Read more here: https://www.vagrantup.com/docs/synced-folders/
+
 [200]: http://en.wikipedia.org/wiki/Secure_Shell
 [210]: https://www.virtualbox.org/
 [220]: http://vagrantup.com/
